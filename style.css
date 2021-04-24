@@ -46,13 +46,14 @@ button{
     top: 50%;
     left:50%;
     transform: translate(-50%,-50%);
+    z-index: 9999999999;
 }
 .start{
     animation: slide 1.5s infinite linear;
 
 }
 .end{
-    z-index: 9999999999999;
+    z-index: 9999;
     height:100vh;
     width: 360px;
     max-width: 100%;
@@ -64,6 +65,9 @@ button{
     width:50%;
     height:100vh;
     position:absolute;
+    /* background-color: green; */
+    z-index: 999999;
+    visibility: hidden;
 }
 .end h2{
     margin-top: 30px;
