@@ -52,8 +52,8 @@ function checkCollide(){
         document.querySelector('.obstacle').classList.remove('start')
     }
 }
-document.getElementById('left').addEventListener('touchstart',moveLeft());
-document.getElementById('right').addEventListener('touchstart',moveRight());
+document.getElementById('left').addEventListener('touchstart',moveLeft);
+document.getElementById('right').addEventListener('touchstart',moveRight);
 setInterval(checkCollide,1);
 setTimeout(() => {
     obs.style.animationDuration = '1s';
