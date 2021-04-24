@@ -26,6 +26,20 @@ let obs = document.querySelector('.obstacle');
 function start(){
     document.querySelector('.startMenu').style.display= 'none';
     document.querySelector('.obstacle').classList.add('start');
+    document.getElementById('left').style.visibility = 'visible';
+    document.getElementById('right').style.visibility = 'visible';
+    setTimeout(() => {
+        obs.style.animationDuration = '1s';
+    }, 15000);
+    setTimeout(() => {
+        obs.style.animationDuration = '0.8s';
+    }, 40000);
+    setTimeout(() => {
+        obs.style.animationDuration = '0.5s';
+    }, 60000);
+    setTimeout(() => {
+        obs.style.animationDuration = '0.2s';
+    }, 80000);
 }
 function start2(){
     document.querySelector('.end').style.display= 'none';
@@ -50,20 +64,12 @@ function checkCollide(){
         document.querySelector('.end').style.display = 'inline-block';
         document.getElementById('score').innerHTML = `Your score is ${score} points`
         document.querySelector('.obstacle').classList.remove('start')
+        document.getElementById('left').style.visibility = 'hidden';
+        document.getElementById('right').style.visibility = 'hidden';
     }
+
 }
 document.getElementById('left').addEventListener('touchstart',moveLeft);
 document.getElementById('right').addEventListener('touchstart',moveRight);
 setInterval(checkCollide,1);
-setTimeout(() => {
-    obs.style.animationDuration = '1s';
-}, 15000);
-setTimeout(() => {
-    obs.style.animationDuration = '0.8s';
-}, 40000);
-setTimeout(() => {
-    obs.style.animationDuration = '0.5s';
-}, 60000);
-setTimeout(() => {
-    obs.style.animationDuration = '0.2s';
-}, 80000);
+
